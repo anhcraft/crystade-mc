@@ -1,0 +1,10 @@
+name: CrystadeMC
+version: '${version}'
+main: dev.anhcraft.crystade.spigot.CrystadeSpigot
+api-version: '1.14'
+
+commands:
+  crystade:
+    description: Push configuration to Crystade
+    usage: /crystade push
+    permission: crystade.push

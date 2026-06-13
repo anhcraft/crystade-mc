@@ -1,0 +1,38 @@
+# ===========================================================
+# [CRYSTADE] Configuration
+#
+# key: must be lowercase, start with a letter, and contain only
+#      letters, digits, or hyphens
+#
+# ===========================================================
+
+version: 1 # schema version
+
+managed-groups:
+  my-managed-group: # group key
+    type: cronjob # resource kind => homogeneous
+    resources:
+      job-1: # resource key
+        name: "Ping example.com"
+        description: "I ping example.com every 12 hour for fun"
+        url: "https://example.com"
+        cron-expr: "0 */12 * * *"
+        disabled: false
+        http-method: GET
+        http-headers:
+          - name: "Content-Type"
+            value: "application/json"
+        http-body: >
+          {"fun":true}
+        http-redirect-follow-limit: 3
+        http-timeout-ms: 5000
+        retry:
+          init-interval-ms: 1000
+          max-interval-ms: 60000
+          multiplier: 2.0
+      job-2:
+        name: "Ping google.com"
+        description: "I ping google.com on Monday, Wednesday, and Friday"
+        url: "https://google.com"
+        cron-expr: "0 0 * * mon,wed,fri"
+        disabled: true

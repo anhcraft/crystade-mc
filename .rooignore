@@ -1,0 +1,17 @@
+*.iml
+**/*.iml
+
+.env
+**/.env
+
+.DS_Store
+
+.idea/
+.vscode/
+.kilo/
+.roo/
+.cline/
+.gradle/
+dist/
+secrets/
+build/

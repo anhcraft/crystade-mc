@@ -1,0 +1,6 @@
+{
+  "id": "crystade-mc",
+  "name": "CrystadeMC",
+  "version": "${version}",
+  "main": "dev.anhcraft.crystade.velocity.CrystadeVelocity"
+}
